@@ -396,4 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Environmental Secrets
 .env
+
+# AZD Files
+.azure
