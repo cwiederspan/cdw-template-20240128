@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateSlimBuilder(args);
 
 // Read in any environment varaibles
-var message = builder.Configuration.GetValue<string>("WELCOME_MESSAGE") ?? throw new ArgumentException("Must set configuration for WELCOME_MESSAGE");
+var message = builder.Configuration.GetValue<string>("WELCOME_MESSAGE") ?? "NO WELCOME MESSAGE PRESENT. YOU CAN SET ONE USING THE 'WELCOME_MESSAGE' ENVIRONMENT VARIABLE.";
 
 Console.WriteLine($"WELCOME_MESSAGE => {message}");
 

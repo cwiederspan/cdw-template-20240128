@@ -3,28 +3,31 @@
 	
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {
-			"version": "latest",
-      		"installBicep": true
+			"installBicep": true,
+			"version": "latest"
 		},
 		"ghcr.io/azure/azure-dev/azd:0": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/devcontainers/features/common-utils:2": {}
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
 	},
 
 	"customizations": {
 		"vscode": {
-			"settings": {
-				"terminal.integrated.defaultProfile.linux": "zsh"
-			},
 			"extensions": [
 				"ms-dotnettools.csdevkit",
+				"GitHub.vscode-github-actions",
 				"humao.rest-client"
 			]
 		}
-	},
-
-	"postCreateCommand": "git config devcontainers-theme.show-dirty 1"
+	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
