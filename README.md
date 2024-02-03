@@ -17,4 +17,6 @@ azd provision
 
 azd deploy
 
+azd pipeline config -e $ENVIRONMENT_NAME --provider github
+
 ```
