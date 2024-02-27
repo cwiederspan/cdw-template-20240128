@@ -93,11 +93,12 @@ module configAppSettings 'appservice-appsettings.bicep' = {
       },
       runtimeName == 'python' && appCommandLine == '' ? { PYTHON_ENABLE_GUNICORN_MULTIWORKERS: 'true'} : {},
       !empty(applicationInsightsName) ? { APPLICATIONINSIGHTS_CONNECTION_STRING: applicationInsights.properties.ConnectionString } : {},
-      !empty(applicationInsightsName) ? { APPINSIGHTS_INSTRUMENTATIONKEY: applicationInsights.properties.InstrumentationKey } : {},
-      !empty(applicationInsightsName) ? { APPINSIGHTS_PROFILERFEATURE_VERSION: '1.0.0' } : {},
-      !empty(applicationInsightsName) ? { APPINSIGHTS_SNAPSHOTFEATURE_VERSION: '1.0.0' } : {},
-      !empty(applicationInsightsName) ? { ApplicationInsightsAgent_EXTENSION_VERSION: '~2' } : {},
-      !empty(applicationInsightsName) ? { DiagnosticServices_EXTENSION_VERSION: '~3' } : {},
+      !empty(applicationInsightsName) ? { ApplicationInsightsAgent_EXTENSION_VERSION: '~3' } : {},
+      !empty(applicationInsightsName) ? { XDT_MicrosoftApplicationInsights_Mode: 'default' } : {},
+      //!empty(applicationInsightsName) ? { APPINSIGHTS_INSTRUMENTATIONKEY: applicationInsights.properties.InstrumentationKey } : {},
+      //!empty(applicationInsightsName) ? { APPINSIGHTS_PROFILERFEATURE_VERSION: '1.0.0' } : {},
+      //!empty(applicationInsightsName) ? { APPINSIGHTS_SNAPSHOTFEATURE_VERSION: '1.0.0' } : {},
+      //!empty(applicationInsightsName) ? { DiagnosticServices_EXTENSION_VERSION: '~3' } : {},
       !empty(keyVaultName) ? { AZURE_KEY_VAULT_ENDPOINT: keyVault.properties.vaultUri } : {})
   }
 }
